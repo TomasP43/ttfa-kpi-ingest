@@ -1,0 +1,30 @@
+# Variables de entorno y credenciales — NUNCA commitear
+.env
+.env.*
+!.env.example
+
+# Estado persistente (claves ya cargadas, message_id procesados)
+state/*.json
+
+# Salidas que se regeneran
+output/*.xlsx
+
+# Adjuntos descargados de Outlook (temporales)
+downloads/
+!downloads/.gitkeep
+
+# Cachés Python / IDEs
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.idea/
+.vscode/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db

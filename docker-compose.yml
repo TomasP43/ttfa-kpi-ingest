@@ -1,0 +1,15 @@
+services:
+  ingest:
+    build: .
+    image: ttfa-kpi-ingest:latest
+    container_name: ttfa-kpi-ingest
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      # Si querés sobreescribir sin tocar .env, lo hacés acá.
+      TZ: ${TZ:-America/Argentina/Buenos_Aires}
+    volumes:
+      - ./state:/app/state
+      - ./output:/app/output
+      - ./downloads:/app/downloads
