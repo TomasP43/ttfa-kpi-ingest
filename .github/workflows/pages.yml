@@ -1,8 +1,7 @@
 name: Deploy GitHub Pages
 
-# Despliega docs/ como sitio estático. La primera vez que corre con permiso
-# pages:write activa GitHub Pages automáticamente (source = GitHub Actions),
-# así no hay que tocar Settings a mano.
+# Despliega docs/ como sitio estático. enablement:true en configure-pages
+# crea el sitio en GitHub Pages la primera vez que corre.
 
 on:
   push:
@@ -33,6 +32,8 @@ jobs:
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
